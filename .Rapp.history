@@ -1,0 +1,396 @@
+six(1)
+six(2)
+six<-function(k){
+x<-rbinom(20000,6*k,1/6)
+length(x[x>=k])/20000}
+six(1)
+six(2)
+six(3)
+?function
+>
+analysis <- function(b0,b1,n) {#
+x <- 1:n#
+y <- b0+b1*x+rnorm(n)#
+c0 <- cut(x,breaks=3)#
+X <- tapply(x,c0,median)#
+Y <- tapply(y,c0,median)#
+b <- (Y[3]-Y[1])/(X[3]-X[1])#
+a <- mean(Y)-b*mean(X)#
+bb <- lsfit(x,y)$coef#
+cbind(a,b,bb[1],bb[2])#
+}
+n<-20
+a<-10
+b<-20
+iter <-1000
+analysis
+n <- 20#
+b0 <- 10#
+b1 <- 2#
+iter <- 100#
+s1 <- NULL#
+s2 <- NULL#
+s3 <- NULL#
+s4 <- NULL#
+for(i in 1:iter) {#
+temp <- analysis(b0,b1,n)#
+s1[i] <- temp[1]#
+s2[i] <- temp[2]#
+s3[i] <- temp[3]#
+s4[i] <- temp[4]#
+}#
+round(cbind(mean(s1),mean(s3)),3)#
+round(cbind(mean(s2),mean(s4)),3)#
+cat("ratio of variances =",round(var(s2)/var(s4),3),"\n")
+reg <- function(a, b, n) {#
+	x<- 1:n#
+	y<- a+bx+rnorm(n)#
+	robust<-cut(x,breaks=3)#
+	X<-tapply(x,robust, median)#
+	Y<-tapply(y,robust,median)#
+	b<-(Y[3]-Y[1])/()X[3]-X[1])#
+	a<-mean(y-b*mean(x))#
+	bb<-lsfit(x,y)$coef#
+	cbind(a,b,bb[1],bb[2])#
+	}
+reg <- function(a, b, n) {#
+	x<- 1:n#
+	y<- a+bx+rnorm(n)#
+	robust<-cut(x,breaks=3)#
+	X<-tapply(x,robust, median)#
+	Y<-tapply(y,robust,median)#
+	b<-(Y[3]-Y[1])/(X[3]-X[1])#
+	c<-mean(Y-b*mean(X))#
+	bb<-lsfit(x,y)$coef#
+	cbind(c,b,bb[1],bb[2])#
+	}
+n<-50
+a <-5
+b<- 10
+iter <-100
+s1<-NULL
+s2<-NULL
+s3<-NULL
+s4<-NULL
+for(i in 1:iter) {
+temp <- reg(a,b,x=n)
+s1[i] <-temp[1]
+s2[i] <-temp[2]
+s3[i] <-temp[3]
+s4[i] <-temp[4]
+}
+for(i in 1:iter) {
+temp <- reg(a,b,x)
+s1[i] <-temp[1]
+s2[i] <-temp[2]
+s3[i] <-temp[3]
+s4[i] <-temp[4]
+}
+for(i in 1:iter) {#
++ temp <- reg(a,b,n)#
++ s1[i] <-temp[1]#
++ s2[i] <-temp[2]#
++ s3[i] <-temp[3]#
++ s4[i] <-temp[4]#
++ }
+for(i in 1:iter) {#
+ temp <- reg(a,b,n)#
+ s1[i] <-temp[1]#
+ s2[i] <-temp[2]#
+ s3[i] <-temp[3]#
+ s4[i] <-temp[4]#
+ }
+reg <- function(a, b, n) {#
+	x<- 1:n#
+	y<- a+b*x+rnorm(n)#
+	robust<-cut(x,breaks=3)#
+	X<-tapply(x,robust, median)#
+	Y<-tapply(y,robust,median)#
+	b<-(Y[3]-Y[1])/(X[3]-X[1])#
+	c<-mean(Y-b*mean(X))#
+	bb<-lsfit(x,y)$coef#
+	cbind(c,b,bb[1],bb[2])#
+	}
+for(i in 1:iter) {#
+ temp <- reg(a,b,n)#
+ s1[i] <-temp[1]#
+ s2[i] <-temp[2]#
+ s3[i] <-temp[3]#
+ s4[i] <-temp[4]#
+ }
+round(cbind(mean(s1),mean(s3)),3)#
+round(cbind(mean(s2),mean(s4)),3)#
+cat("ratio of variances =",round(var(s2)/var(s4),3),"\n")
+round(var(s2)/var(s4),3)
+?pptri
+pptri <- function(x){x^2}#
+qptri <- function(p){sqrt(p)}#
+dptri <- function(x){2*x}#
+rptri <- function(n){sqrt(runif(n))}
+x <- seq(0,1,0.1
+pptri(x)
+x <- seq(0,1,0.1)
+pptri(x)
+n<-30000#
+pptri<-function(x){x^2}#
+qptri<-function(x){sqrt(x)}#
+dptri<-function(x){2*x}#
+rptri<-function(x){sqrt(runif(n))}#
+x<-seq(0,1,0.1)#
+pptri(x)#
+qptri(x)#
+dptri(x)#
+rptri(x)
+n<-30000#
+pptri<-function(x){x^2}#
+qptri<-function(x){sqrt(x)}#
+dptri<-function(x){2*x}#
+rptri<-function(x){sqrt(runif(n))}#
+x<-seq(0,1,0.1)#
+round(pptri(x),3)#
+round(qptri(x),3)#
+round(dptri(x),3)#
+round(rptri(x),3)
+n <- 10000#
+z0 <- -1
+ltsdnrm<-function(x){(1/sqrt(2*pi))*(exp(-.5z^2))/(1-pnorm(z))}
+ltsdnrm<-function(z){((1/sqrt(2*pi))*exp(-.5z^2))/(1-pnorm(z))}
+ltsdnrm<-function(z){(1/sqrt(2*pi)*exp(-.5z^2))/(1-pnorm(z))}
+ltsdnrm<-function(z){(1/sqrt(2*pi)*exp(-.5*z^2))/(1-pnorm(z))}
+u1 <- runif(5*n,z0,3)#
+u2 <- runif(5*n)
+u1
+summary(u1)
+summary(u2)
+a<-runif(n,z0,3)
+b<-runif(n)
+ltsdnrm(a)
+ltsdnrm(b)
+summary(ltsdnrm(a))
+n<-105
+p<-.02
+x<-0:100
+pbinom(x,n,p)
+ppois(x,n*p)
+x<-0:20
+pbinom(x,n,p)
+cbind(n,p,x,pbinom(x,n,p),ppois(x,n*p)),4)
+round(cbind(n,p,x,pbinom(x,n,p),ppois(x,n*p)),4)
+round(cbind(n,p,x,pbinom(x,n,p),ppois(x,n*p)),3)
+par(mfrow=c(1,1))#
+par(pty="s")#
+plot(c(0,1,1,0,0),c(0,0,1,1,0),xlab="",ylab="",type="l")#
+t <- seq(0,2*pi,0.01)#
+x <- 0.5*cos(t)+0.5#
+y <- 0.5*sin(t)+0.5#
+lines(x,y)#
+for(n in c(10^2,10^3,10^4,10^5)) {#
+x0 <- runif(n)#
+y0 <- runif(n)#
+inside <- sum(ifelse(sqrt((x0-0.5)^2+(y0-0.5)^2)<0.5,1,0))#
+print(cbind(4*inside/n,pi),4)#
+}
+par(mfrow=c(1,1))#
+par(pty="s")#
+plot(c(0,1,1,0,0),c(0,0,1,1,0),xlab="",ylab="",type="l")
+t <- seq(0,2*pi,0.01)#
+x <- 0.5*cos(t)+0.5#
+y <- 0.5*sin(t)+0.5#
+lines(x,y)
+plot(c(0,1,1,0,0),c(0,0,1,1,0))
+plot(c(0,1,1,0,0),c(0,0,1,1,0),type="l")
+for(n in c(10^2,10^3,10^4,10^5)) {#
+x0 <- runif(n)#
+y0 <- runif(n)#
+inside <- sum(ifelse(sqrt((x0-0.5)^2+(y0-0.5)^2)<0.5,1,0))#
+print(cbind(4*inside/n,pi),4)#
+}
+n<-1000
+x0<-runif(n)
+y0<-runif(n)
+sqrt((x0-.5)^2+(y0-0.5)^2)<0.5,1,0))
+sqrt((x0-.5)^2+(y0-0.5)^2)<0.5,)
+sqrt((x0-.5)^2+(y0-0.5)^2)<0.5)
+sqrt((x0-.5)^2+(y0-0.5)^2)<0.5
+sum(sqrt((x0-.5)^2+(y0-0.5)^2)<0.5,1,0)
+sum(sqrt((x0-.5)^2+(y0-0.5)^2)<0.5,1,0)/n
+x<-0:200
+sampe(x,n,replace=TRUE)
+sample(x,n,replace=TRUE)
+sample(x,n,replace=FALSE)
+?sample
+n<-100
+a<-sample(x,n,replace=FALSE)
+b<-sample(x,n,replace=TRUE)
+var(a)
+var(b)
+mean(a)
+mean(b)
+getwd()
+data <-read.csv("/Users/Minnie/Desktop/Budget/201213a.csv")
+head()
+head(10)
+head(100)
+?head
+head(data)
+getwd()
+install.packages("portfolio")
+library(portfolio)
+map.market(id=data$id, area=data$views, group=data$category, color=data$comments, main="San Jose Adopted Budgte 2012-13")
+?map.market
+map.market(id=data$Subcategory, area=data$Amount, group=data$Category, color=data$Department, main="San Jose Adopted Budgte 2012-13", print=TRUE)
+map.market(id=data$Subcategory, area=data$Amount, group=data$Category, color=100*data$Department, main="San Jose Adopted Budgte 2012-13", print=TRUE)
+map.market(Subcategory, Category Amount, Department, main="San Jose Adopted Budgte 2012-13", print=TRUE)
+map.market(Subcategory, Category, Amount, Department, main="San Jose Adopted Budgte 2012-13", print=TRUE)
+map.market(Category, Amount, Department, main="San Jose Adopted Budgte 2012-13", print=TRUE)
+map.market(id=data$Subcategory, area=data$Amount, group=data$Department, main="San Jose Adopted Budgte 2012-13", print=TRUE)
+map.market(id=data$Subcategory, area=data$Amount, group=data$Department, color=data$Department, main="San Jose Adopted Budgte 2012-13", print=TRUE)
+es
+Yes
+graffiti <-- read.csv("/Users/Minnie/R/CSJ/Graffiti/allgraffitidata.csv")
+warnings()
+head(graffiti)
+graffiti <-- read.table("/Users/Minnie/R/CSJ/Graffiti/allgraffitidata.csv")
+dim(Graffiti)
+dim(graffiti)
+graffiti <- read.table("/Users/Minnie/R/CSJ/Graffiti/allgraffitidata.csv")
+graffiti <- read.csv("/Users/Minnie/R/CSJ/Graffiti/allgraffitidata.csv")
+head(graffiti)
+barplot(graffiti$District)
+?histogram
+??histogram
+?plot.histogram
+plot.histogram(graffiti$District)
+hist(graffit$District)
+hist(graffiti$District)
+typeof(graffiti$District)
+?sapply
+?barplot
+int.hist(graffiti$District)
+?hist
+hist(graffiti$District)
+hist(as.numeric(graffiti$District))
+?hist
+hist(as.numeric(graffiti$District), labels=graffiti$District)
+hist(as.numeric(graffiti$District), breaks = 10)
+hist(as.numeric(graffiti$District))
+factor(graffiti$District)
+?is.na
+?levels
+?gl
+?levels
+levels(graffiti$District)
+levels(graffiti$District) <-c(1,2,3,4,5,6,7,8,9,10)
+hist(as.numeric(graffiti$District), xlim=10)
+hist(as.numeric(graffiti$District), xlim = 9)
+hist(as.numeric(graffiti$District), xlim = "10")
+hist(as.numeric(graffiti$District), col = blue)
+hist(as.numeric(graffiti$District), col = red)
+?col
+hist(as.numeric(graffiti$District), col = 490)
+hist(as.numeric(graffiti$District), col = "blue")
+hist(as.numeric(graffiti$District), col = "blue", border=NA)
+hist(as.numeric(graffiti$District), col = "blue", border=NA, xlab="District", ylab="Frequency")
+?hist
+hist(as.numeric(graffiti$District), col = "blue", border=NA, xlim=(1,10), xlab="District", ylab="Frequency")
+hist(as.numeric(graffiti$District), col = "blue", border=NA, xlim=c(1,10), xlab="District", ylab="Frequency")
+hist(as.numeric(graffiti$District), breaks=20, col = "blue", border=NA, xlim=c(1,10), xlab="District", ylab="Frequency")
+hist(as.numeric(graffiti$District), breaks=10, col = "blue", border=NA, xlim=c(1,10), xlab="District", ylab="Frequency")
+hist(as.numeric(graffiti$District), breaks=20, col = "blue", border=NA, xlim=c(1,10), xlab="District", ylab="Frequency")
+hist(as.numeric(graffiti$District), breaks=40, col = "blue", border=NA, xlim=c(1,10), xlab="District", ylab="Frequency")
+hist(as.numeric(graffiti$District), breaks=5, col = "blue", border=NA, xlim=c(1,10), xlab="District", ylab="Frequency")
+10
+hist(as.numeric(graffiti$District), breaks=25, col = "blue", border=NA, xlim=c(1,10), xlab="District", ylab="Frequency")
+install.packages("ggplot2")
+library(ggplot2)
+?ggplot2
+qplot(graffiti$District)
+?qplot
+qplot(graffiti$District, xlim=c(1,10))
+install.packages("ineq")
+install.packages("ineq")
+library(ineq)
+wd
+wd()
+getwd()
+Gini <- read(GiniData.csv)
+Gini <- read.csv(GiniData.csv)
+Gini <- read.csv(/Gini/GiniData.csv)
+Gini <- read.csv(GiniData.csv)
+getwd()
+Gini <- read.csv(GiniData.csv)
+Gini <- read.csv("GiniData.csv")
+head
+head(Gini)
+rename(Gini, c(1=Zip))
+names(Gini)[1] <- Zip Code
+names(Gini)[1] <- "Zip Code"
+head
+head(Gini)
+names(Gini)[1]<-"Zip Code"
+dim(Gini)
+names(Gini)[1]<-"Zip Code"#
+names(Gini)[2]<-"Total Households"#
+names(Gini)[3]<-"<10000"#
+names(Gini)[4]<-"10000-14999"#
+names(Gini)[5]<-"15000-24999"#
+names(Gini)[6]<-"25000-34999"#
+names(Gini)[7]<-"35000-49999"#
+names(Gini)[8]<-"500000-74999"#
+names(Gini)[9]<-"75000-99999"#
+names(Gini)[10]<-"100000-149999"#
+names(Gini)[11]<-"150000-199999"#
+names(Gini)[12]<-">200000"#
+names(Gini)[13]<-"Mean income"
+head
+head(Gini)
+data(Airpassengers)
+data(AirPassengers)
+head
+head(AirPassengers)
+?c
+names(Gini)[1]<-"Zip Code"#
+names(Gini)[2]<-"Total Households"#
+names(Gini)[3]<-"5000"#
+names(Gini)[4]<-"12500"#
+names(Gini)[5]<-"20000"#
+names(Gini)[6]<-"30000"#
+names(Gini)[7]<-"42500"#
+names(Gini)[8]<-"62500"#
+names(Gini)[9]<-"87500"#
+names(Gini)[10]<-"125000"#
+names(Gini)[11]<-"1750000"#
+names(Gini)[12]<-"200000"#
+names(Gini)[13]<-"Mean income"
+head
+head(Gini)
+?table
+expand.dft(as.data.frame(Gini, stringsAsFactors=T))
+?expand.dft
+as.data.frame(Gini, stringsAsFactors=TRUE)
+head(Gini)
+names(Gini)[2]<-"TH"
+Gini2 <- c(data$5000*TH, data$12500*TH)
+Gini2 <- c(data$5000%*%TH, data$12500%*%TH)
+Gini2 <- c(data$5000%*%"TH", data$12500%*%"TH")
+data$5000
+data$"5000"
+Gini2 <- c(data$"5000"%*%"TH", data$"12500"%*%"TH")
+42.8%*%5210
+Gini$5000a <- c(Gini$5000*TH, Gini$12500*TH)
+Gini$5000a <- c(Gini$"5000"%*%"TH", Gini$"12500"%*%"TH")
+Gini$5000a <- c(Gini$5000 * Gini$TH)
+Gini$1 <- Gini$5000 * Gini$TH
+Gini$a <- Gini$5000 * Gini$TH
+Gini$a <- Gini$"5000" * Gini$"TH"
+head(Gini)
+Gini$a <- Gini$TH * Gini$5000
+?str
+str(Gini$5000)
+str(Gini)
+is.numeric(Gini)
+is.numeric(Gini$5000)
+is.numeric(Gini$"5000")
+is.string(Gini$"5000")
+is.character(Gini$"5000")
+class(Gini$"5000")
